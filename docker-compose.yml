@@ -1,0 +1,35 @@
+# Optional convenience for local dev — runs backend + frontend together.
+# Most contributors will just use the venv/npm instructions in README.md;
+# this is here for anyone who prefers containers even in dev.
+#
+# Usage: docker compose up --build
+# Frontend: http://localhost:3000   Backend: http://localhost:8000/docs
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:///./jee_diagnosis.db
+      SECRET_KEY: dev-only-secret-change-me
+      FRONTEND_ORIGIN: http://localhost:3000
+      GROQ_API_KEY: ""
+      ENVIRONMENT: development
+    volumes:
+      - backend_db:/app
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:8000/api/v1
+    depends_on:
+      - backend
+
+volumes:
+  backend_db:

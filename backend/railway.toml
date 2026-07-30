@@ -1,0 +1,15 @@
+# Railway alternative to Render — Railway auto-detects the Dockerfile.
+# In the Railway dashboard: New Project → Deploy from GitHub repo → set
+# "Root Directory" to `backend`. This file just pins the build method
+# explicitly so it doesn't fall back to Nixpacks.
+#
+# Set these variables in the Railway service's "Variables" tab:
+#   DATABASE_URL, SECRET_KEY, FRONTEND_ORIGIN, GROQ_API_KEY (optional),
+#   GROQ_MODEL, ENVIRONMENT=production
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
