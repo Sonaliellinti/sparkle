@@ -11,11 +11,7 @@ roadmap's prose, and power an AI mentor that's hard-restricted to the
 student's actual weak concepts — it never grades or diagnoses anything
 itself.
 
-> Sparkle began as a pivot from an earlier JEE Physics diagnosis prototype
-> — the FastAPI/Next.js architecture, auth, dashboard, graph, and tutor
-> pages were all reused; only the subject content and quiz-generation logic
-> changed. `docs/PROJECT_PLAN.md` has the original technical spec this
-> was built from.
+
 
 ## 1. Architecture
 
