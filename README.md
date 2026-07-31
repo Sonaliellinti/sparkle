@@ -206,3 +206,5 @@ on the roadmap per the product spec:
 The AI Tutor feature requires additional computational resources for model processing. The deployed backend is hosted on Render's free tier, which has limited memory and may restart the service during AI Tutor requests. 
 
 The feature has been fully tested and works correctly in the local environment. The deployed version includes the AI Tutor implementation, but occasional unavailability may occur due to free-tier hosting limitations.
+
+You can change a few files to overcome this problem.
