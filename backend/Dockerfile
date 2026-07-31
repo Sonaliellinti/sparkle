@@ -21,4 +21,4 @@ EXPOSE 8000
 # Apply migrations, then start the server. Using `alembic upgrade head`
 # here (not create_all) is the production-correct path — see
 # docs/PROJECT_PLAN.md §10.2.
-CMD ["sh", "-c", "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+CMD ["sh", "-c", "alembic upgrade head && python -m app.db.seed && uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
