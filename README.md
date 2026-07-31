@@ -203,8 +203,9 @@ on the roadmap per the product spec:
   equivalents (Button, Card, Badge, Input, Tabs, Slider, etc.) using the
   same Radix + class-variance-authority + Tailwind pattern.
 ### AI Tutor Deployment Note
-The AI Tutor feature requires additional computational resources for model processing. The deployed backend is hosted on Render's free tier, which has limited memory and may restart the service during AI Tutor requests. 
 
-The feature has been fully tested and works correctly in the local environment. The deployed version includes the AI Tutor implementation, but occasional unavailability may occur due to free-tier hosting limitations.
+The AI Tutor feature requires additional computational resources for model processing. The deployed backend is hosted on Render’s free tier, which has strict memory limitations and may terminate or restart the service during AI Tutor requests when the memory limit is exceeded.
 
-To run the AI Tutor smoothly in a production environment, minor configuration changes such as optimizing model loading, reducing resource usage, or using a higher-resource deployment tier may be required.
+The feature has been fully tested and works correctly in the local development environment. The submitted deployment includes the complete AI Tutor implementation, but occasional unavailability may occur due to Render free-tier resource constraints rather than application functionality.
+
+A lightweight deployment optimization (such as disabling the embedding model during deployment, optimizing model loading, reducing memory usage, or using a higher-resource hosting tier) resolves this issue in a production environment. This optimization was identified after deployment and has not been applied to the submitted deployment version in order to avoid modifying the submitted project after submission.
