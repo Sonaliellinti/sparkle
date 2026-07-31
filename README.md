@@ -207,4 +207,4 @@ The AI Tutor feature requires additional computational resources for model proce
 
 The feature has been fully tested and works correctly in the local environment. The deployed version includes the AI Tutor implementation, but occasional unavailability may occur due to free-tier hosting limitations.
 
-You can change a few files to overcome this problem.
+To run the AI Tutor smoothly in a production environment, minor configuration changes such as optimizing model loading, reducing resource usage, or using a higher-resource deployment tier may be required.
